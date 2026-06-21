@@ -22,6 +22,19 @@ ALLOWED_HOSTS = [
     h.strip() for h in os.environ.get("ALLOWED_HOSTS", "localhost,127.0.0.1").split(",")
 ]
 
+# Required for Django admin/forms behind nginx (Django 4+).
+_csrf_origins = os.environ.get("CSRF_TRUSTED_ORIGINS", "")
+CSRF_TRUSTED_ORIGINS = [o.strip() for o in _csrf_origins.split(",") if o.strip()]
+
+# Trust X-Forwarded-* headers from nginx/reverse proxy in Docker/production.
+USE_X_FORWARDED_HOST = os.environ.get("USE_X_FORWARDED_HOST", "True") == "True"
+if os.environ.get("USE_PROXY_SSL_HEADER", "True") == "True":
+    SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
+
+USE_HTTPS = os.environ.get("USE_HTTPS", "False") == "True"
+SESSION_COOKIE_SECURE = USE_HTTPS
+CSRF_COOKIE_SECURE = USE_HTTPS
+
 AUTH_USER_MODEL = "users.User"
 
 _cors_origins = os.environ.get("CORS_ALLOWED_ORIGINS", "http://localhost:5173")
