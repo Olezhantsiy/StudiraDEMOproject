@@ -1,0 +1,10 @@
+# Production overrides — use with:
+#   docker compose -f docker-compose.yml -f docker-compose.prod.yml up -d --build
+
+services:
+  backend:
+    ports: []
+
+  frontend:
+    ports:
+      - "${FRONTEND_PORT:-80}:80"

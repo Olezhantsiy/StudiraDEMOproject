@@ -1,0 +1,938 @@
+{
+  "info": {
+    "_postman_id": "7aa31d1f-88e1-44c2-9af7-a2d440c5e251",
+    "name": "drf",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "33849945"
+  },
+  "item": [
+    {
+      "name": "CreateUser",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"username\": \"headdepar1\",\r\n  \"email\": \"student@mail.com\",\r\n  \"password\": \"12345678\",\r\n  \"first_name\": \"Ivan\",\r\n  \"last_name\": \"Studentov\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/users/register/",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "users",
+            "register",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "New Request",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzc3NDczNDQxLCJpYXQiOjE3Nzc0NjYyNDEsImp0aSI6ImQ2OTUxMjg4MmY1ZDRmMGJhMTg1NTRlMGQwZDFlMGIyIiwidXNlcl9pZCI6IjQiLCJ1c2VybmFtZSI6InN0dWRlbnQzIiwicm9sZSI6IlNURCIsImlzX3N0YWZmIjpmYWxzZX0.v4uW6-sctEm2gFCmkIf87c6249XQgDdpNZGncHAAbPQ",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/users/me/",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "users",
+            "me",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "loginJWT",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"username\": \"supervisor1\",\r\n  \"password\": \"12345678\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/users/login/",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "users",
+            "login",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "me",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzc3NDkzMzM4LCJpYXQiOjE3Nzc0ODYxMzgsImp0aSI6IjFkMDlkZTkyODkwYzQxNGE5ZTE3NGQ2MTM1NzBjNzE5IiwidXNlcl9pZCI6IjIiLCJ1c2VybmFtZSI6InN0dWRlbnQxIiwicm9sZSI6IlNURCIsImlzX3N0YWZmIjpmYWxzZX0.13qhbQz6iaMAzG71VUP0RDcBZpqo9YhND-3nd7NDoa8",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/users/me/",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "users",
+            "me",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "CreateProject",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzc3NDkxODkyLCJpYXQiOjE3Nzc0ODQ2OTIsImp0aSI6ImZhYzkyNzQ1NzM4ZTQ3NGZhZDMzYWM3ZThkZmYzOWZkIiwidXNlcl9pZCI6IjMiLCJ1c2VybmFtZSI6InN1cGVydmlzb3IxIiwicm9sZSI6IlNQViIsImlzX3N0YWZmIjpmYWxzZX0.oNS0dOO1Zp25-loj7TWG1d9esp_fPF0LaMeDkzFaXqI",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"enrollment_id\": 1,\r\n  \"title\": \"AI research2\",\r\n  \"description\": \"Test project\",\r\n  \"keywords\": \"ai, ml\",\r\n  \"start_date\": \"2026-04-29\",\r\n  \"status\": \"DRAFT\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/projects/",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "projects",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "CreateStages",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzc3NzI3MTMxLCJpYXQiOjE3Nzc3MTk5MzEsImp0aSI6IjYwYjg3Yjg1MTQzZjRmOTU5MTE1MGZlYmUxNzY5ZjRjIiwidXNlcl9pZCI6IjIiLCJ1c2VybmFtZSI6InN0dWRlbnQxIiwicm9sZSI6IlNURCIsImlzX3N0YWZmIjpmYWxzZX0.T6jNKPYkqwwiPowEZGoNMqcNln9hmjrgv53Y3aWsHeA",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"name\": \"этап 3\",\r\n  \"order\": 3,\r\n  \"start_date\": \"2026-05-01\",\r\n  \"deadline\": \"2026-05-01\",\r\n  \"status\": \"PENDING\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/projects/3/stages/",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "projects",
+            "3",
+            "stages",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "CreateTaskSubmition",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "text",
+              "type": "text",
+              "uuid": "37fa0dc8-da53-431c-be2d-5090b32f9cb0",
+              "value": "solut"
+            },
+            {
+              "key": "file",
+              "type": "file",
+              "uuid": "cac945d7-b11d-4779-b1f7-0aa848e092ef",
+              "src": "solution.docx"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/projects/3/stages/3/tasks/4/submissions/",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "projects",
+            "3",
+            "stages",
+            "3",
+            "tasks",
+            "4",
+            "submissions",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "CreateReview",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzc3ODM5MDQ4LCJpYXQiOjE3Nzc4MzE4NDgsImp0aSI6Ijc5YmUzZDdkMGRjMDQyZDRhZTJkMjAwMTY0NmJmNGMzIiwidXNlcl9pZCI6IjMiLCJ1c2VybmFtZSI6InN1cGVydmlzb3IxIiwicm9sZSI6IlNQViIsImlzX3N0YWZmIjpmYWxzZX0.mokR146eo_RSFKhDUHbgYuf9xAAjvrbz8QFL6Hm0UZ0",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"decision\": \"APPROVED\",\r\n  \"comment\": \"Good work\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/projects/1/stages/1/tasks/1/submissions/3/review/",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "projects",
+            "1",
+            "stages",
+            "1",
+            "tasks",
+            "1",
+            "submissions",
+            "3",
+            "review",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GetStages",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzc3NDkzMzM4LCJpYXQiOjE3Nzc0ODYxMzgsImp0aSI6IjFkMDlkZTkyODkwYzQxNGE5ZTE3NGQ2MTM1NzBjNzE5IiwidXNlcl9pZCI6IjIiLCJ1c2VybmFtZSI6InN0dWRlbnQxIiwicm9sZSI6IlNURCIsImlzX3N0YWZmIjpmYWxzZX0.13qhbQz6iaMAzG71VUP0RDcBZpqo9YhND-3nd7NDoa8",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "}\r\n  \"name\": \"Stage 1\",\r\n  \"order\": 1,\r\n  \"start_date\": \"2026-04-29\",\r\n  \"deadline\": \"2026-05-10\",\r\n  \"status\": \"PENDING\"\r\n}"
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/projects/1/stages/",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "projects",
+            "1",
+            "stages",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GetTasks",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzc3NDkwNjE3LCJpYXQiOjE3Nzc0ODM0MTcsImp0aSI6ImM5YzYzODA5OTFiNjQ2OWU5ZDM5MDNjNGRhNjRiYzlkIiwidXNlcl9pZCI6IjQiLCJ1c2VybmFtZSI6InN0dWRlbnQzIiwicm9sZSI6IlNURCIsImlzX3N0YWZmIjpmYWxzZX0.ScmcQhowEqYpP-dUZdK1hn3C1-RC9gPs4iGXM2iwXHQ",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "}\r\n  \"name\": \"Stage 1\",\r\n  \"order\": 1,\r\n  \"start_date\": \"2026-04-29\",\r\n  \"deadline\": \"2026-05-10\",\r\n  \"status\": \"PENDING\"\r\n}"
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/projects/1/stages/1/tasks/",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "projects",
+            "1",
+            "stages",
+            "1",
+            "tasks",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GetSubmitions(otvet)",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzc3ODQzNzExLCJpYXQiOjE3Nzc4MzY1MTEsImp0aSI6IjIyZmI1NDMzNTEzMTRjNGU5ODE5NDJjYTg2Y2IxODVkIiwidXNlcl9pZCI6IjMiLCJ1c2VybmFtZSI6InN1cGVydmlzb3IxIiwicm9sZSI6IlNQViIsImlzX3N0YWZmIjpmYWxzZX0.MDXO5otB9R6gWAWpeKu1sZ433GO1v01MM_2tZOM7eNs",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/projects/1/stages/1/tasks/4/submissions/",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "projects",
+            "1",
+            "stages",
+            "1",
+            "tasks",
+            "4",
+            "submissions",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GetProjects",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzc3NDk0MTIyLCJpYXQiOjE3Nzc0ODY5MjIsImp0aSI6ImQ5OWJlZDI2YTU3ODRlYTNhYThmOTdlMjIzY2MxMGY0IiwidXNlcl9pZCI6IjQiLCJ1c2VybmFtZSI6InN0dWRlbnQzIiwicm9sZSI6IlNURCIsImlzX3N0YWZmIjpmYWxzZX0.KGhkBuor04Cvh0QmlyEZpOSkv__1REKddAMAzM0gtAY",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/projects/",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "projects",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "UpdateProject",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzc3ODQxMDYwLCJpYXQiOjE3Nzc4MzM4NjAsImp0aSI6ImE5YWUxMDkwMmNlMzQzNzQ5MTc2ZWYwNzYwYWNiY2UzIiwidXNlcl9pZCI6IjMiLCJ1c2VybmFtZSI6InN1cGVydmlzb3IxIiwicm9sZSI6IlNQViIsImlzX3N0YWZmIjpmYWxzZX0.IDbF_M3J4NXQjppofdoMXziXEPSEJify0GPjjXhdVXk",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"enrollment_id\": 1,\r\n  \"title\": \"AI research2\",\r\n  \"description\": \"Test project\",\r\n  \"keywords\": \"ai, ml\",\r\n  \"start_date\": \"2026-04-29\",\r\n  \"status\": \"DRAFT\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/projects/3/",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "projects",
+            "3",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "CreateTask",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzc3NDg2MDc2LCJpYXQiOjE3Nzc0Nzg4NzYsImp0aSI6ImFlNDgzZjQ2NTE3ZTQxZGZiNmE0OTlmZTRmNDJmMzE1IiwidXNlcl9pZCI6IjQiLCJ1c2VybmFtZSI6InN0dWRlbnQzIiwicm9sZSI6IlNURCIsImlzX3N0YWZmIjpmYWxzZX0.yRFxO9Y1xU42H6zLACettSv9A0Mt-g157HYx5HvyLGU",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"title\": \"фиксы бека\",\r\n  \"description\": \"Find sources\",\r\n  \"deadline\": \"2026-05-01\",\r\n  \"status\": \"TODO\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/projects/1/stages/1/tasks/",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "projects",
+            "1",
+            "stages",
+            "1",
+            "tasks",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GetReview",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzc3ODM5MDkxLCJpYXQiOjE3Nzc4MzE4OTEsImp0aSI6ImUwZThiNGIzY2UyNzQ3MTY5N2E5MDAwMjc2ODI3NjQ4IiwidXNlcl9pZCI6IjQiLCJ1c2VybmFtZSI6InN0dWRlbnQzIiwicm9sZSI6IlNURCIsImlzX3N0YWZmIjpmYWxzZX0.jglc7toOC1sHe_hFr2tAT6hR3Idbb5i3_Lb8qmENeH8",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/projects/1/stages/1/tasks/1/submissions/3/review/",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "projects",
+            "1",
+            "stages",
+            "1",
+            "tasks",
+            "1",
+            "submissions",
+            "3",
+            "review",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GetProjectsById",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzc3ODM5MjQxLCJpYXQiOjE3Nzc4MzIwNDEsImp0aSI6ImUwYjQ1NGE4NThiODRjNTc5NGZlODU4MDg4MGU3MDcyIiwidXNlcl9pZCI6IjMiLCJ1c2VybmFtZSI6InN1cGVydmlzb3IxIiwicm9sZSI6IlNQViIsImlzX3N0YWZmIjpmYWxzZX0.c0JwJKHbe48QdA9xgi8FYPgbyS76Tejk0H08CHN8FO0",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/projects/1",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "projects",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "UpdateStages",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzc3ODQxMDYwLCJpYXQiOjE3Nzc4MzM4NjAsImp0aSI6ImE5YWUxMDkwMmNlMzQzNzQ5MTc2ZWYwNzYwYWNiY2UzIiwidXNlcl9pZCI6IjMiLCJ1c2VybmFtZSI6InN1cGVydmlzb3IxIiwicm9sZSI6IlNQViIsImlzX3N0YWZmIjpmYWxzZX0.IDbF_M3J4NXQjppofdoMXziXEPSEJify0GPjjXhdVXk",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"name\": \"Stage 3\",\r\n    \"order\": 3,\r\n    \"start_date\": \"2026-04-29\",\r\n    \"deadline\": \"2026-05-10\",\r\n    \"status\": \"PENDING\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/projects/1/stages/1/",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "projects",
+            "1",
+            "stages",
+            "1",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GetSubmitionsFile",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzc3ODQzNzExLCJpYXQiOjE3Nzc4MzY1MTEsImp0aSI6IjIyZmI1NDMzNTEzMTRjNGU5ODE5NDJjYTg2Y2IxODVkIiwidXNlcl9pZCI6IjMiLCJ1c2VybmFtZSI6InN1cGVydmlzb3IxIiwicm9sZSI6IlNQViIsImlzX3N0YWZmIjpmYWxzZX0.MDXO5otB9R6gWAWpeKu1sZ433GO1v01MM_2tZOM7eNs",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/projects/1/stages/1/tasks/4/submissions/3/download/",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "projects",
+            "1",
+            "stages",
+            "1",
+            "tasks",
+            "4",
+            "submissions",
+            "3",
+            "download",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "CreateTemplateProjectPlan",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzc4MDc5NDgzLCJpYXQiOjE3NzgwNzIyODMsImp0aSI6IjgyMzhkYTUzZDg3ODRkN2Y5YzEzYWY1Nzc3ODY4ODY2IiwidXNlcl9pZCI6IjMiLCJ1c2VybmFtZSI6InN1cGVydmlzb3IxIiwicm9sZSI6IlNQViIsImlzX3N0YWZmIjpmYWxzZX0.KfduVYgiyZU61tXqnWx7oeuKnJqYvz47Ckw328zjmWc",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/projects/4/generate_template/",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "projects",
+            "4",
+            "generate_template",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "CreateTaskSubmitionNewWithReport",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzc4MTgwMzEzLCJpYXQiOjE3NzgxNzMxMTMsImp0aSI6ImQ1ZDgwNjFmODcwMTRhZjRiYjkyODM3MDExNTUyNWM1IiwidXNlcl9pZCI6IjIiLCJ1c2VybmFtZSI6InN0dWRlbnQxIiwicm9sZSI6IlNURCIsImlzX3N0YWZmIjpmYWxzZX0.NbQ_LBTvzsxtmnszU9g6XbPDr1Q-s8g_L7lCh0IJZUk",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "text",
+              "type": "text",
+              "uuid": "37fa0dc8-da53-431c-be2d-5090b32f9cb0",
+              "value": "solut"
+            },
+            {
+              "key": "file",
+              "type": "file",
+              "uuid": "cac945d7-b11d-4779-b1f7-0aa848e092ef",
+              "src": "solution.docx"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/projects/1/stages/1/tasks/3/submissions/",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "projects",
+            "1",
+            "stages",
+            "1",
+            "tasks",
+            "3",
+            "submissions",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GetSubmitionsFileReport",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzc4MTgwMzEzLCJpYXQiOjE3NzgxNzMxMTMsImp0aSI6ImQ1ZDgwNjFmODcwMTRhZjRiYjkyODM3MDExNTUyNWM1IiwidXNlcl9pZCI6IjIiLCJ1c2VybmFtZSI6InN0dWRlbnQxIiwicm9sZSI6IlNURCIsImlzX3N0YWZmIjpmYWxzZX0.NbQ_LBTvzsxtmnszU9g6XbPDr1Q-s8g_L7lCh0IJZUk",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/projects/1/stages/1/tasks/3/submissions/13/download_report/",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "projects",
+            "1",
+            "stages",
+            "1",
+            "tasks",
+            "3",
+            "submissions",
+            "13",
+            "download_report",
+            ""
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

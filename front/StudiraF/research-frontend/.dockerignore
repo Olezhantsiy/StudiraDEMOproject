@@ -1,0 +1,6 @@
+node_modules
+dist
+.git
+.gitignore
+*.md
+drf.postman_collection.json
